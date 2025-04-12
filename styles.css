@@ -1,0 +1,93 @@
+body {
+    background-color: #232323;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textarea-container {
+    width: 90%;
+    max-width: 500px;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #8c52ff, #5ce1e6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background: transparent;
+    color: white;
+}
+
+textarea::placeholder {
+    color: white;
+}
+
+.dustbin{
+    width: 18px;
+    height: auto;
+}
+
+.btn-container {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.delete-btn, .calc-btn {
+    background: linear-gradient(90deg, #fff7ad, #ffa9f9);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 100px;
+    color: #232323;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-btn:hover, .calc-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+.box2, .box3 {
+    background: linear-gradient(90deg, #5de0e6, #004aad);
+}
+
+.box1, .box4 {
+    background: linear-gradient(90deg, #004aad, #cb6ce6);
+}
+
+.box1, .box2, .box3, .box4 {
+    width: 200px;
+    height: 100px;
+    font-size: 16px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 12px;
+}
+
