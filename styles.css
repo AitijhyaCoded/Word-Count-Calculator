@@ -95,10 +95,20 @@ textarea::placeholder {
 
 .counts-container{
     display: grid;
-    grid-template-columns: 250px 250px;
-    grid-template-rows: 150px 150px;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(2, 250px);
     gap: 4px;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .counts-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .box1, .box2, .box3, .box4 {
+        width: 70%;
+        margin: 8px auto; 
+    }
 }
 
