@@ -1,20 +1,37 @@
-const textInput = document.querySelector('textarea');
+let textInput = document.querySelector('textarea');
 let charCount = document.querySelector('.char-count');
 let wordCount = document.querySelector('.word-count');
 let lineCount = document.querySelector('.line-count');
 let paraCount = document.querySelector('.para-count');
-calcBtn = document.querySelector('.calc-btn');
-dltBtn = document.querySelector('.delete-btn');
+let calcBtn = document.querySelector('.calc-btn');
+let dltBtn = document.querySelector('.delete-btn');
+
+window.addEventListener('DOMContentLoaded', () => {
+    textInput.value = localStorage.getItem('text-input') || "";
+    countsChar(); 
+    countsWord();
+    countsLine();
+    countsPara();
+});
+
+textInput.addEventListener('input', () => {
+    localStorage.setItem('text-input', textInput.value);
+});
 
 calcBtn.addEventListener('click', () => {
-        countsChar();
-        countsWord();
-        countsLine();
-        countsPara();
+    countsChar();
+    countsWord();
+    countsLine();
+    countsPara();
 });
 
 dltBtn.addEventListener('click', () => {
     textInput.value = "";
+    localStorage.removeItem('text-input'); 
+    countsChar();
+    countsWord();
+    countsLine();
+    countsPara();
 });
 
 const countsChar = () => {
@@ -23,7 +40,7 @@ const countsChar = () => {
 };
 
 const countsWord = () => {
-    const count = textInput.value.trim().split(/\s+/).length;
+    const count = textInput.value.trim().split(/\s+/).filter(word => word.length > 0).length;
     wordCount.textContent = count;
 };
 
@@ -33,15 +50,11 @@ const countsLine = () => {
 };
 
 const countsPara = () => {
-    const count = textInput.value.trim().split("\n").length;
+    const count = textInput.value.trim().split("\n").filter(para => para.length > 0).length;
     paraCount.textContent = count;
 };
 
-// console.log(text.length); //char
-// console.log(text.trim().split(/\s+/).length); //words
-// console.log(text.trim().split(/[.?!]\s*/).filter(s => s.trim().length > 0).length); //sentences
-// console.log(text.trim().split("\n").length); //paragraphs
 /*
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem voluptas dolores atque iste sit deserunt asperiores. 
-Magni consequatur eius rem autem deserunt aspernatur, officia laudantium iure fugit voluptate tenetur et?
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat nobis eaque sunt ipsam! 
+Sequi facere ipsam eveniet, eum dignissimos vitae sit animi quibusdam autem rem odit voluptatum ad cupiditate aspernatur.
 */
