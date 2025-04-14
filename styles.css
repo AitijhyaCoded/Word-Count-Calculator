@@ -36,7 +36,7 @@ textarea {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     background: transparent;
-    color: white;
+    color: black;
 }
 
 textarea::placeholder {
